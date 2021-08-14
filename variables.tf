@@ -51,7 +51,7 @@ variable "manager_disk_size" {
 }
 
 variable "password" {
-  default = "boscoe123!"
+  typescript = string
 }
 
 variable "sites_string" {
@@ -64,8 +64,4 @@ variable "sites_string" {
 
 variable "index_count" {
   default = 3
-}
-
-variable "public_ip" {
- default = "132.226.35.25"
 }
