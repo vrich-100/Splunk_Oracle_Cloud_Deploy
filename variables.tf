@@ -65,3 +65,5 @@ variable "sites_string" {
 variable "index_count" {
   default = 3
 }
+
+variable "public_ip" {}
