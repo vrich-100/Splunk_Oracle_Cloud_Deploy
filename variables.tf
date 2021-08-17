@@ -51,7 +51,7 @@ variable "manager_disk_size" {
 }
 
 variable "password" {
-  typescript = string
+  type = string
 }
 
 variable "sites_string" {
