@@ -36,7 +36,7 @@ terraform {
   required_providers {
     oci = {
       source = "hashicorp/oci"
-      version = "4.37.0"
+      version = "4.48.0"
       #make sure to use the current provider
     }
   }
@@ -508,7 +508,7 @@ resource "oci_core_instance" "indexer" {
     config = jsonencode(
       {
         "shape"            = var.instance_shape
-        "disk_count"       = var.index_count
+        "disk_count"       = var.indexer_count
         "password"     = var.password
         "sites_string" = var.sites_string
         "count"            = count.index
@@ -517,7 +517,7 @@ resource "oci_core_instance" "indexer" {
     )
   }
 
-  count = var.index_count
+  count = var.indexer_count
 }
 
 

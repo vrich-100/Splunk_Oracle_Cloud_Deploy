@@ -201,13 +201,21 @@ systemctl disable firewalld
 password=$(echo $json | jq -r $CONFIG_LOCATION.password)
 sites_string=$(echo $json | jq -r $CONFIG_LOCATION.sites_string)
 
-file="splunk-8.1.3-63079c59e632-linux-2.6-x86_64.rpm"
-version="8.1.3"
-url="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=$version&product=splunk&filename=$file&wget=true"
-wget -O $file $url
-chmod 744 $file
+product="splunk"       # values can be : splunk , splunkforwarder
+version="8.2.2"        # Splunk product Version
+hash="87344edfcdb4"    # specific per Version
+arch="x86_64"           # values can be : x86_64 (redhat, tgz), amd64 (ubuntu), x64 (Windows)
+os="linux"             # values can be : linux, windows
+pkg="rpm"              # Values can be : tgz, rpm, deb, msi
+
+
+filename="splunk-8.2.2-87344edfcdb4-linux-2.6-x86_64.rpm"
+
+url="https://download.splunk.com/products/splunk/releases/8.2.2/linux/splunk-8.2.2-87344edfcdb4-linux-2.6-x86_64.rpm"
+wget -O $filename $url
+chmod 744 $filename
 mkdir -p /opt/splunk
-rpm -i $file
+rpm -i $filename
 
 #copy over basic conf files
 cat << EOF > /opt/splunk/etc/system/local/ui-tour.conf

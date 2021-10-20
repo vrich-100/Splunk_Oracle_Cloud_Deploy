@@ -62,8 +62,8 @@ variable "sites_string" {
 # indexer instance variables
 # ------------------------------
 
-variable "index_count" {
-  default = 3
+variable "indexer_count" {
+  default = 1
 }
 
 variable "public_ip" {}

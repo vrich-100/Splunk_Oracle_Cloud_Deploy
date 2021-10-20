@@ -202,13 +202,21 @@ password=$(echo $json | jq -r $CONFIG_LOCATION.password)
 sites_string=$(echo $json | jq -r $CONFIG_LOCATION.sites_string)
 public_ip=$(echo $json | jq -r $CONFIG_LOCATION.public_ip)
 
-file="splunk-8.1.1-08187535c166-linux-2.6-x86_64.rpm"
-version="8.1.1"
-url="https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=$version&product=splunk&filename=$file&wget=true"
-wget -O $file $url
-chmod 744 $file
+product="splunk"       # values can be : splunk , splunkforwarder
+version="8.2.2"        # Splunk product Version
+hash="87344edfcdb4"    # specific per Version
+arch="x86_64"           # values can be : x86_64 (redhat, tgz), amd64 (ubuntu), x64 (Windows)
+os="linux"             # values can be : linux, windows
+pkg="rpm"              # Values can be : tgz, rpm, deb, msi
+
+
+filename="splunk-8.2.2-87344edfcdb4-linux-2.6-x86_64.rpm"
+
+url="https://download.splunk.com/products/splunk/releases/8.2.2/linux/splunk-8.2.2-87344edfcdb4-linux-2.6-x86_64.rpm"
+wget -O $filename $url
+chmod 744 $filename
 mkdir -p /opt/splunk
-rpm -i $file
+rpm -i $filename
 
 #template user conf files
 cat << EOF > /opt/splunk/etc/system/local/user-seed.conf
@@ -237,14 +245,14 @@ enableSplunkdSSL = true
 
 [shclustering]
 disabled = false
-mgmt_uri = https://129.213.67.201:8089
+mgmt_uri = https://XXXXX:8089
 pass4SymmKey = demosearches
 shcluster_label = prime
 replication_factor = 1
-#conf_deploy_fetch_url = https://132.226.35.25:8089
+#conf_deploy_fetch_url = https://XXXXX:8089
 
 [clustering]
-master_uri = https://132.226.35.25:8089
+master_uri = https://XXXXX:8089
 mode = searchhead
 pass4SymmKey = democluster
 
