@@ -62,16 +62,29 @@ Create Policy permissions:
 
 
 ### 5. In your Splunk Instances
-Splunk On Heavy Forwarder:
--create index for OCI events NAME OF INDEX: _____________
--install OCI TA
+
+* This repository will create a cluster with a replication factor of 2 and search factor of 2. More information can be found [here](https://docs.splunk.com/Documentation/Splunk/8.2.2/Indexer/Thereplicationfactor)
+  
+#### Cluster Manager Instance
+
+- Login to the instance using https://[publicipaddress]:8000
+- Your login information will be:
+	username: admin
+	pw: [set by your password variable]
+	
+- In Splunk ---> Setting --->Indexer Clustering
+	You will see you splunk instances in their respective function (indexer, search head)
+*The replication factor will not be 'met' until you add another indexer, if an indexer is not necessary simply edit the values by selecting 'More Info' and edit the values*
+
+-install Splunk app for OCI (optional)
+-follow directions on splunkbase
+
+Splunk On Heavy Forwarder, the following steps are specific to the OCI TA but the instance can be used as a heavy forwarder for any purpose:
+-Create index for OCI events NAME OF INDEX: _____________
+-Install OCI TA
 -Configure TA with the stream writing to the created index
 -confirm forwarding settings
 -configure indexer clustering settings; peer node
-
-Splunk On Cluster Manager
--install Splunk app for OCI
--follow directions on splunkbase
 
 Splunk on SHCaptain
 
