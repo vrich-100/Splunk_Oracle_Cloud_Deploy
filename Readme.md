@@ -34,30 +34,34 @@ Replace the "XXXX" in the bash scripts with your reserved IP or desired ip for y
 
 Confirm desired ports listed [bash scripts]
 
-### 4. Deploying your local copy of this repository
+### 4. Deploying your local copy of this repository in Oracle Cloud
 
 OCI-Resource Manager-Stacks
 
 Create New Stack
-Install .tf
+
+Upload your local copy of this repository (with the corrected IP addresses in the bash scripts) as a folder or .zip.
+
+*Make sure to fill in the password variable with your desired Splunk instance password*
 
 After Instances are Created
 Get OCID for Heavy Forwarder: __________
-Add the reserve ip to the Cluster_Manager instance
+Attach the desired reserved ip address to the Cluster_Manager instance
 OCI-Instance(cluster-manager)-Attached VNICs, Click on {Name}, IPv4 address, Reserved IP
 
 Confirm the policies for:
--Logging
--Streaming
--Service Connector Hub, make sure to add the Audit logs
+- Logging
+- Streaming
+- Service Connector Hub, make sure to add the Audit logs
 - Create Dynamic Group (update with compartment OCID or instance.id of the Heavy Forwarder):
 Name of Dynamic Group:______________________ (ex SplunkTest)
 Ex: Any {instance.compartment.id ='ocid1.tenancy.oc1..aXXXX'}
 
- Create Policy permissions:
+Create Policy permissions:
 	Allow dynamic-group SplunkTest to use stream-pull in tenancy
 
 
+### 5. In your Splunk Instances
 Splunk On Heavy Forwarder:
 -create index for OCI events NAME OF INDEX: _____________
 -install OCI TA
