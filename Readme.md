@@ -93,9 +93,13 @@ Create Policy permissions:
 *If you return to the Indexer Clustering screen on the cluster manager, you should see the forwarder and the replication/search factors should be met*
 
 The remaining steps are specific to the OCI TA but the instance can be used as a heavy forwarder for any purpose:
+
 -Create index for OCI events NAME OF INDEX: _____________
+
 -Install OCI TA
+
 -Configure TA with the stream writing to the created index
+
 -confirm forwarding settings
 
 
@@ -104,7 +108,12 @@ The remaining steps are specific to the OCI TA but the instance can be used as a
 
 Adding additional Splunk resources using OCI Resource Manager:
 
--add an index to the stack
+-Return to OCI Resource Manager --> Stacks
+-Click on the name of the stack you've created
+-Click 'Edit'
+-You should see a similar screen to your initial creation of the stack. Select 'Next' at the bottom of the screen. 
+-On the variables screen, increase the number of indexers to the desired total count. 
+-Applying this job will provision indexer instances.
 
 
 Result: Splunk, OCI HF, Index Cluster, SHCaptain
