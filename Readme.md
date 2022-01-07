@@ -104,9 +104,9 @@ The remaining steps are specific to the OCI TA but the instance can be used as a
 
 
 #### Search Head Captain
+working
 
-
-Adding additional Splunk resources using OCI Resource Manager:
+## Adding additional Splunk resources using OCI Resource Manager:
 
   * Return to OCI Resource Manager --> Stacks
   * Click on the name of the stack you've created
