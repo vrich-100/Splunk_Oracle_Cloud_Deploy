@@ -2,7 +2,7 @@
 
 This repository is for a rapid deployment of a basic [Splunk Validated Architecture](https://www.splunk.com/pdfs/technical-briefs/splunk-validated-architectures.pdf) on a new [Oracle Cloud Infrastructure](https://www.oracle.com/cloud/) deployment.
 
-This repository provisions Oracle Cloud Infrastructure components and 3 [Splunk](https://www.splunk.com) compute instances that are ready to perform as a Heavy Forwarder, Cluster Manager, Indexer with the Cluster Manager also serving as a Search Head.
+This repository provisions Oracle Cloud Infrastructure components and 4 [Splunk](https://www.splunk.com) compute instances that are ready to perform as a Heavy Forwarder, Cluster Manager, Indexer with the Cluster Manager also serving as a Search Head.
 
 In this repository, the Heavy Forwarder instance is ready for installation of the Oracle/Splunk Technical Add-on/ plugin. Contact Oracle support for the latest version.
 
