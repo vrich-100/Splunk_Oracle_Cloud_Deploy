@@ -74,22 +74,36 @@ Create Policy permissions:
 	
 - In Splunk ---> Setting --->Indexer Clustering
 	You will see you splunk instances in their respective function (indexer, search head)
-*The replication factor will not be 'met' until you add another indexer, if an indexer is not necessary simply edit the values by selecting 'More Info' and edit the values*
+	
+*The replication factor will not be 'met' until you add your heavy forwarder to the cluster*
 
--install Splunk app for OCI (optional)
--follow directions on splunkbase
+-Install [OCI (Oracle Cloud Infrastructure) App for Splunk](https://splunkbase.splunk.com/app/5289/) (optional)
+-Follow setup instrucions found in the "Details" tab of the app's page on splunkbase.
 
-Splunk On Heavy Forwarder, the following steps are specific to the OCI TA but the instance can be used as a heavy forwarder for any purpose:
+#### Heavy Forwarder
+- Login to the instance using https://[publicipaddress]:8000
+- Your login information will be:
+	username: admin
+	pw: [set by your password variable]
+	
+- In Splunk ---> Setting --->Indexer Clustering
+- Enable indexer clustering
+- Create a 'peer node' and use the [publicip of cluster_manager instance] as the mgmt URI and choose port 8080.
+
+*If you return to the Indexer Clustering screen on the cluster manager, you should see the forwarder and the replication/search factors should be met*
+
+The remaining steps are specific to the OCI TA but the instance can be used as a heavy forwarder for any purpose:
 -Create index for OCI events NAME OF INDEX: _____________
 -Install OCI TA
 -Configure TA with the stream writing to the created index
 -confirm forwarding settings
--configure indexer clustering settings; peer node
-
-Splunk on SHCaptain
 
 
-In OCI
+#### Search Head Captain
+
+
+Adding additional Splunk resources using OCI Resource Manager:
+
 -add an index to the stack
 
 
