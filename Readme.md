@@ -108,12 +108,12 @@ The remaining steps are specific to the OCI TA but the instance can be used as a
 
 Adding additional Splunk resources using OCI Resource Manager:
 
--Return to OCI Resource Manager --> Stacks
--Click on the name of the stack you've created
--Click 'Edit'
--You should see a similar screen to your initial creation of the stack. Select 'Next' at the bottom of the screen. 
--On the variables screen, increase the number of indexers to the desired total count. 
--Applying this job will provision indexer instances.
+  * Return to OCI Resource Manager --> Stacks
+  * Click on the name of the stack you've created
+  * Click 'Edit'
+  * You should see a similar screen to your initial creation of the stack. Select 'Next' at the bottom of the screen. 
+  * On the variables screen, increase the number of indexers to the desired total count. 
+  * Applying this job will provision indexer instances.
 
 
 Result: Splunk, OCI HF, Index Cluster, SHCaptain
