@@ -100,7 +100,7 @@ The remaining steps are specific to the OCI TA but the instance can be used as a
 
 -Configure TA with the stream writing to the created index
 
--confirm forwarding settings
+-Confirm forwarding settings
 
 
 #### Search Head Captain
