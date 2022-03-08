@@ -89,6 +89,7 @@ Create Policy permissions:
 - In Splunk ---> Setting --->Indexer Clustering
 - Enable indexer clustering
 - Create a 'peer node' and use the [publicip of cluster_manager instance] as the mgmt URI and choose port 8080.
+- Use the password set in indexer.sh line 248 and bootstrap2.sh line 257 for the pass4SymmKey value. 
 
 *If you return to the Indexer Clustering screen on the cluster manager, you should see the forwarder and the replication/search factors should be met*
 
