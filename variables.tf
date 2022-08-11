@@ -4,16 +4,10 @@
 variable "tenancy_ocid" {}
 variable "region" {}
 variable "compartment_ocid" {}
-
-#variable "user_ocid" {
-#  default = "ocid1.user.oc1..aaaaaaaaoozst6y7agsdybsda7kwd2tcicy6ptg6sooqtyxijqs4rlbgnxkq"
-#  }
-
-variable "instance_shape" {
-  description = "Shape of the instance"
-  type        = string
-  default     = "VM.Standard2.1"
-}
+variable "user_ocid" {}
+variable "private_key_password" {}
+variable "private_key_path" {}
+variable "fingerprint" {}
 
 variable "generate_ssh_key_pair" {
   description = "Auto-generate SSH key pair"
@@ -32,10 +26,59 @@ variable "ssh_private_key" {
   type        = string
 }
 
-variable "use_tenancy_level_policy" {
-  description = "Compute instance to access all resources at tenancy level"
-  type        = bool
-  default     = true
+
+# ------------------------------
+# Splunk Server variables
+# ------------------------------
+
+variable "splunk_server_ip" {
+  type  = string
+  description = "IP Address or Host name and port of Splunk Server."
+  
+}
+
+variable "splunk_server_port" {
+  type  = string
+  description = "Port number of Splunk Server recieving endpoint"
+  
+}
+
+variable "splunk_oci_index_name" {
+  type =string
+  description = "Destintation index of the forwarded logs."
+  default = "oci_index"
+
+}
+
+variable "splunk_compartment_id" {
+  type = string
+  
+}
+
+variable "network_compartment_id" {
+  type = string
+  default = ""
+}
+
+# ------------------------------
+# Splunk Heavy Forwarder variables
+# ------------------------------
+
+variable "splunk_hf_instance_shape" {
+  description = "Shape of the instance"
+  type        = string
+  default     = "VM.Standard2.1"
+  # update
+}
+
+variable "splunk_hf_subnet_id" {
+  description = "Subnet OCID that for the heavy forwarder to be deployed in."
+  type  = string
+}
+
+variable "splunk_hf_password" {
+  type = string
+  description = "Admin user password for the Heavy Forwarder. Must be changed on first login."
 }
 
 # ------------------------------
@@ -50,9 +93,7 @@ variable "manager_disk_size" {
   default = 500
 }
 
-variable "password" {
-  type = string
-}
+
 
 variable "sites_string" {
   default = "site1"
@@ -66,4 +107,4 @@ variable "indexer_count" {
   default = 1
 }
 
-variable "public_ip" {}
+# variable "public_ip" {}

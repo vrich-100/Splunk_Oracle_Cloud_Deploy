@@ -199,6 +199,7 @@ systemctl disable firewalld
 
 # admin password
 password=$(echo $json | jq -r $CONFIG_LOCATION.password)
+splunk_server=$(echo $json | jq -r $CONFIG_LOCATION.splunk_server)
 sites_string=$(echo $json | jq -r $CONFIG_LOCATION.sites_string)
 public_ip=$(echo $json | jq -r $CONFIG_LOCATION.public_ip)
 
@@ -247,7 +248,7 @@ cat << EOF > /opt/splunk/etc/system/local/web.conf
 [settings]
 httpport = 8000
 enableSplunkWebSSL = true
-mgmtHostPort = XXXX:8089
+mgmtHostPort = $splunk_server
 EOF
 
 # make splunk_app_oci directory
