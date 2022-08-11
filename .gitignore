@@ -1,0 +1,12 @@
+**/*.tfstate*
+**/*.out
+**/.terraform/*
+**/.terraform.*
+**/.DS_Store
+**/crash.log
+**/.csv
+*.pem
+**/terraform.tfvars
+**/terraform*.tfvars
+test/**
+*.csv
