@@ -5,10 +5,6 @@ variable "tenancy_ocid" {}
 variable "region" {}
 variable "compartment_ocid" {}
 
-#variable "user_ocid" {
-#  default = "ocid1.user.oc1..aaaaaaaaoozst6y7agsdybsda7kwd2tcicy6ptg6sooqtyxijqs4rlbgnxkq"
-#  }
-
 variable "instance_shape" {
   description = "Shape of the instance"
   type        = string
