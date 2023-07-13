@@ -210,9 +210,9 @@ os="linux"             # values can be : linux, windows
 pkg="rpm"              # Values can be : tgz, rpm, deb, msi
 
 
-filename="splunk-8.2.2-87344edfcdb4-linux-2.6-x86_64.rpm"
+filename="splunk-9.1.0.1-77f73c9edb85.x86_64.rpm"
 
-url="https://download.splunk.com/products/splunk/releases/8.2.2/linux/splunk-8.2.2-87344edfcdb4-linux-2.6-x86_64.rpm"
+url="https://download.splunk.com/products/splunk/releases/9.1.0.1/linux/splunk-9.1.0.1-77f73c9edb85.x86_64.rpm"
 wget -O $filename $url
 chmod 744 $filename
 mkdir -p /opt/splunk
